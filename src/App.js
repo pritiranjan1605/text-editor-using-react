@@ -1,16 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 import Navbar from "./components/Navbar";
 import Textform from "./components/Textform";
 
 import { useState } from "react";
 import Alert from "./components/Alert";
 
-import { BrowserRouter as Router ,Routes} from "react-router-dom";
-import { Route } from 'react-router-dom';
 
 
-import About from "./components/About";
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -55,29 +52,14 @@ function App() {
   return (
     <>
       
-      
-
-      <Router>
-      <Navbar
-        title="TextUtils"
-        about="about TextUtils"
-        mode={mode}
-        togglemode={togglemode}
-      />
-      <Alert alert={alert} />
-        <Routes>
-          <Route exact path='/about' element={<About/>}>
-            
-          </Route>
-          <Route exact path='/home' element={<Textform/>}>
-            
-          </Route>
-          <Route exact path='/' element={<Textform/>}>
-            
-          </Route>
-          
-        </Routes>
-      </Router>
+        <Navbar
+          title="TextUtils"
+          about="about TextUtils"
+          mode={mode}
+          togglemode={togglemode}
+        />
+        <Alert alert={alert} />
+        <Textform/>
     </>
   );
 }
